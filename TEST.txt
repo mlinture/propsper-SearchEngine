@@ -1,0 +1,31 @@
+The following 10 queries performed poorly, leading to irrelevant or little to no results:
+1. How to brush my teeth while combing my hair in the bathroom
+2. Recipes for a big family gathering on Christmas Eve
+3. To be or not to be
+4. What is the difference between there their and they’re
+5. Does professor panageas know professor kerrigan?!
+6. The hat the cat the mat and the bat within a rat
+7. You might want to plug in your pc, your battery is running low
+8. Linux command terminal vs ubuntu on windows wsl 2.0 GUI graphical user interface
+9. This is a long query but i want to find out how i can get to the san francisco giants game in the shortest time possible from the oakland A’s game if it were to be in dallas texas on a tuesday afternoon at 2:00PM
+10. What time does gavin go to the arc, i want to see him
+
+The following 10 queries performed well:
+1. uci
+2. Cristina Lopes
+3. University of california
+4. ics buildings
+5. computer science department
+6. machine learning
+7. ics courses
+8. Michael Shindler
+9. Professors in uci
+10. Donald Brenn Hall
+
+We improved the queries using the following techniques:
+1. We used a tf-idf scoring to enhance the search results
+2. We enhanced the index search time by implementing the "index of indices" 
+   pointer that utilizes word positions
+3. By assigning greater significance to words in bolded text or titles, 
+   we were able to identify and prioritize more important information, 
+   resulting in more relevant search results.

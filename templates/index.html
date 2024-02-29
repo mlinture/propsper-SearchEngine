@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prosper Search</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .spin {
+            animation: 1.5s linear infinite spin;
+            animation-play-state: inherit;
+            border: solid 5px #cfd0d1;
+            border-bottom-color: #1c87c9;
+            border-radius: 50%;
+            content: "";
+            height: 30px;
+            position: absolute;
+            /* top: 10%;
+            left: 10%; */
+            transform: translate3d(-50%, -50%, 0);
+            width: 30px;
+            will-change: transform;
+            /* background-color: white; */
+            top: 29%;
+            left: 73%;
+            display:none;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: translate3d(-50%, -50%, 0) rotate(0deg);
+            }
+            100% {
+            transform: translate3d(-50%, -50%, 0) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="name">
+        <img src="https://media0.giphy.com/media/65MvYUChLe6LTnKY48/giphy.gif?cid=6c09b9527lxzyn9yfqg5qs6vsev7bxf4oks6g76ufns70mfz&ep=v1_stickers_related&rid=giphy.gif&ct=s">
+        <h1>Live Long and Prosper</h1>
+        <img src="https://media0.giphy.com/media/65MvYUChLe6LTnKY48/giphy.gif?cid=6c09b9527lxzyn9yfqg5qs6vsev7bxf4oks6g76ufns70mfz&ep=v1_stickers_related&rid=giphy.gif&ct=s">
+    </div>
+    
+
+    <div class="row">
+        <div class="queryBox">
+            <form action="{{ url_for("index")}}" method="post" onsubmit="showLoading()">
+                <input type="text" id="Name" name="queryInput" placeholder="Enter Query">
+            </form>
+            <div id="Spin" class="spin"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="userQuery"> 
+            <p><b>Results For:</b> {{queryInput}}</p> 
+        </div>
+        <div class="timer">
+            <p>{{timer}} ms</p>
+        </div>
+    </div>
+    <div class="linksContainer">
+        <div class="links">
+            {% for query in queryList %}
+                <a href={{query}}>{{ query }}</a>
+                <p>{{ summaryList[loop.index0] }}</p>   
+                <hr>       
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>CS 121 | Spring 2023 - Kenny Yu | Daniel Song | Evan Leong | Marcus Linture</p>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById("Spin").style.display = "block";
+        }
+    </script>
+</body>
+</html>
